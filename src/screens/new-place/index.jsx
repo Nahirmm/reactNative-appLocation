@@ -13,6 +13,8 @@ const NewPlace = ({ navigation }) => {
   const [image, setImage] = useState('');
   const [coords, setCoords] = useState(null);
 
+  const enableButton = text && image && coords;
+
   const onHandlerChangeText = (text) => {
     setText(text);
   };
@@ -42,7 +44,12 @@ const NewPlace = ({ navigation }) => {
         />
         <ImageSelector onImage={onImage} />
         <LocationSelector onLocation={onLocation} />
-        <Button title="Guardar direccion" color={colors.primary} onPress={onHandlerSubmit} />
+        <Button
+          disabled={!enableButton}
+          title="Guardar dirección"
+          color={colors.primary}
+          onPress={onHandlerSubmit}
+        />
       </View>
     </ScrollView>
   );

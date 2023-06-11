@@ -4,7 +4,7 @@ import { styles } from './styles';
 
 const PlaceItem = ({ id, title, image, address, onSelect }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => onSelect(id)}>
+    <TouchableOpacity style={styles.container} onPress={() => onSelect(id, title)}>
       <Image style={styles.image} source={{ uri: image }} />
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>

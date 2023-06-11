@@ -24,7 +24,7 @@ const PlacesNavigator = () => {
         name="Places"
         component={PlaceListScreen}
         options={({ navigation }) => ({
-          title: 'Direcciones',
+          title: 'Mis direcciones',
           headerRight: () => (
             <TouchableOpacity onPress={() => navigation.navigate('NewPlace')}>
               <Ionicons name="add-circle-outline" size={25} color={colors.white} />
@@ -35,7 +35,9 @@ const PlacesNavigator = () => {
       <Stack.Screen
         name="PlaceDetail"
         component={PlaceDetailScreen}
-        options={{ title: 'Detalles de la dirección' }}
+        options={({ route }) => ({
+          title: route.params.title,
+        })}
       />
       <Stack.Screen
         name="NewPlace"

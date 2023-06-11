@@ -7,8 +7,8 @@ import { PlaceItem } from '../../components';
 const PlaceList = ({ navigation }) => {
   const places = useSelector((state) => state.place.places);
 
-  const onHandlerSelect = (id) => {
-    navigation.navigate('PlaceDetail', { placeId: id });
+  const onHandlerSelect = (id, title) => {
+    navigation.navigate('PlaceDetail', { placeId: id, title });
   };
 
   const renderItem = ({ item }) => <PlaceItem {...item} onSelect={onHandlerSelect} />;

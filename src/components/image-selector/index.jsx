@@ -12,7 +12,9 @@ export const ImageSelector = ({ onImage }) => {
     const { status } = await requestCameraPermissionsAsync();
 
     if (status !== 'granted') {
-      Alert.alert('Permiso denegado', 'Necesitamos permisos para usar la camara', [{ text: 'Ok' }]);
+      Alert.alert('Permiso denegado', 'Se necesitan permisos para usar la cámara', [
+        { text: 'Ok' },
+      ]);
       return false;
     }
 
